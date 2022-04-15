@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4" [formGroup]="loginForm">
+            <div class="form-group">
+                <label for="userName" class="form-label mt-4">User Name</label>
+                <input type="text" class="form-control" formControlName="userName" id="username" 
+                aria-describedby="emailHelp" placeholder="Enter User Name">
+              </div>
+              <div class="form-group">
+                <label for="password" class="form-label mt-4">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+              </div>
+              <div class="row mt-2"> 
+                <div class="col-6">
+                    <button class="btn btn-success mx-2" (click)="getLoginData()">Login</button>
+                <button class="btn btn-danger float-left">Reset</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

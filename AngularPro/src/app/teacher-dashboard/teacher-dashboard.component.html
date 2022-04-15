@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-light main-heading">
+        <div class="container-fluid">
+            <h5 class="text-white m-0 p-0">Teacher Dashboard</h5>
+            <div class="d-flex">
+                <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+                    Teacher</button>
+            </div>
+        </div>
+    </nav>
+    <div class="w-100 m-0 p-0 mt-2 table-border">
+        <table class="table table-hover" [border]="true">
+            <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Teacher ID</th>
+                    <th scope="col">Teacher Name</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Experience</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of teacherListData;let i=index">
+                    <td scope="row">{{i+1}}</td>
+                    <td scope="row">{{data.teacherId}}</td>
+                    <td scope="row">{{data.name}}</td>
+                    <td scope="row">{{data.subject}}</td>
+                    <td scope="row">{{data.experience}}</td>
+                    <td>
+                       <button class="btn btn-primary mx-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" (click)="editTeacherData(data)">Edit</button>
+                        <button class="btn btn-danger" (click)="deleteTeacherData(data)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="height:500px !important; overflow: auto;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Teacher Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="teacherForm">
+                    <!-- <div class="mb-3">
+                        <label for="teacherId" class="form-label">Teacher Id</label>
+                        <input type="text" class="form-control" formControlName="teacherId" id="teacherId" readonly>
+                    </div> -->
+                    <div class="mb-3">
+                        <label for="teacherName" class="form-label">Teacher Name</label>
+                        <input type="text" class="form-control" formControlName="teacherName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" formControlName="subject">
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Experience</label>
+                        <input type="text" class="form-control" formControlName="experience">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="addTeacherData()">Add</button>
+                <button type="button" class="btn btn-primary" (click)="updateTeacherData()">Update</button>
+                <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

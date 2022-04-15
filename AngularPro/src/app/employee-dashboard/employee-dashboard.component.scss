@@ -1,0 +1,41 @@
+
+tbody, td, tfoot, th, thead, tr {
+  padding: 5px 10px !important;
+  white-space: nowrap;
+}
+th{
+    background: #18738f !important;
+    position: sticky;
+    color: white;
+    align-items: center;
+}
+.main-heading{
+  background: #c76767 !important;
+  border-radius: 5px;
+  padding: 2px !important;
+}
+.btn-info {
+  color: #fff;
+  background-color: #05688f;
+  border-color: #05688f;
+  height: 28px;
+  padding: 0px 8px !important;
+}
+.btn-danger {
+  color: #fff;
+  background-color: #c9385c;
+  border-color: #c9385c;
+  height: 28px;
+  padding: 0px 8px !important;
+}
+.btn-success {
+  color: #fff;
+  background-color: #ee0b88;
+  border-color: #ee0b88;
+  height: 28px;
+  padding: 0px 8px !important;
+}
+.table-border{
+  border: 1px solid black;
+  border-radius: 5px;
+}
